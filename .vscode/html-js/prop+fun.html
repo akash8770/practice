@@ -1,0 +1,56 @@
+<html>
+    <head>
+
+    </head>
+        <script type="text/javascript" >
+          var str ="Hello World";
+          var str1 =new String("Hello World ");
+
+            //'string' properties....
+          document.write(str.length +"<br/>");
+          document.write(str1.length +"<br/>");
+
+            //string Functions
+          document.write(str.toLowerCase()+"<br/>");
+          document.write(str.toUpperCase() +"<br/>");
+          document.write(str.charAt(0) +"<br/>");
+          document.write(str.charAt(10) +"<br/>");
+          document.write(str.charCodeAt(10) +"<br/>");
+          document.write(str.indexOf("H") +"<br/>");
+          document.write(str.indexOf("l") +"<br/>");
+          document.write(str.lastIndexOf("l") +"<br/>");
+          document.write(str.slice(0,8) +"<br/>");
+          document.write(str.slice(2,3) +"<br/>"); 
+          document.write(str.search("lo") +"<br/>");
+          document.write(str.search("l") +"<br/>");
+          document.write(str.replace("World","India") +"<br/>"); //old string,new string
+          document.write(str.replace("world","India") +"<br/>"); //old string new string
+          document.write(str.match("World") +"<br/>");   //return matching string or 'null'
+          document.write(str.match("world") +"<br/>");   //return matching string or 'null'
+          document.write(str.match("z") +"<br/>");   //return matching string or 'null'
+          document.write(str.repeat(3) +"<br/>");
+          document.write(str.concat(" Good Morning") +"<br/>");
+          document.write(str.concat(" Good Morning") +"<br/>");
+          document.write(str.concat(" Good Morning","Good Evening") +"<br/>");
+          document.write(str.endsWith("ld") +"<br/>");
+          document.write(str.endsWith("z") +"<br/>");
+          document.write(str.startsWith("He") +"<br/>");
+          document.write(str.startsWith("he") +"<br/>");
+          document.write(str.substr(0,4) +"<br/>");  //starting index,length
+          document.write(str.substring(0,4) +"<br/>"); //starting index, ending index-1
+          document.write("India"+str1+"India<br/>");
+          document.write("India"+str1.trim() +"India<br/>");
+          document.write(str1.toString() +"<br/>");
+
+          var str2="a";
+          var str3="b";
+          var str4="a";
+          document.write(str2.localeCompare(str4) +"<br/>");
+          document.write(str2.localeCompare(str3) +"<br/>");
+          document.write(str3.localeCompare(str2) +"<br/>");
+          
+	</script>
+    <body>  
+    </body>
+</html>
+

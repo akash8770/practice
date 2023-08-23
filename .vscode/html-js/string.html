@@ -1,0 +1,40 @@
+<html>
+    <head>
+
+    </head>
+        <script>
+           var str="Hello world 123_56$@*-";
+           var pattern1=/world/;
+           document.write(str.match(pattern1)+"<br>");
+           var pattern2=/l/;
+           document.write(str.match(pattern2)+"<br>");
+           var pattern3=/l/g;
+           document.write(str.match(pattern3)+"<br>");//global search
+           var pattern4=/L/g;
+           document.write(str.match(pattern4)+"<br>");
+           var pattern5=/l/gi;
+           document.write(str.match(pattern5)+"<br>");//global insensitve
+           var pattern6=/erd/gi;
+           document.write(str.match(pattern6)+"<br>");
+           var pattern7=/ell/gi;
+           document.write(str.match(pattern7)+"<br>");
+           var pattern8=/[a-z||A-Z]/g;
+           document.write(str.match(pattern8)+"<br>");
+           var pattern9=/[abcdefghijklmnop]/g;
+           document.write(str.match(pattern9)+"<br>");
+           var pattern10=/[^a-z]/g;
+           document.write(str.match(pattern10)+"<br>");
+           var pattern11=/[^A-Z]/g;
+           document.write(str.match(pattern11)+"<br>");
+           var pattern12=/[^A-z]/g;
+           document.write(str.match(pattern12)+"<br>");
+           var pattern13=/[^0-9]/g;
+           document.write(str.match(pattern13)+"<br>");
+           var pattern14=/[l|z]/g;
+           document.write(str.match(pattern14)+"<br>");
+
+	</script>
+    <body>
+        
+    </body>
+</html>

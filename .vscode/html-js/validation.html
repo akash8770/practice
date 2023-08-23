@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        function validate()
+        {
+            var loginid,password; 
+            var loginiderrormessage="Enter Login id<br>Enter 8 character only<br>ENter lowercase alphabets only<br>";   //declaring error variable
+            var passworderrormessage="Enter password<br>enter 4to8 character only<br>Enter alphabets";   
+            //declaring pattern
+            var loginidpattern = /^[a-z]+$/;
+            var passwordpattern = /^[a-zA-Z0-9]+&/;
+            //retreiving from field
+            loginid=document.getElementById("name").value;
+            password=document.getElementById("pass").value; 
+            //compulsion of login
+            if(loginid.length==0)
+            {
+                document.getElementById("errormessage").innerHTML=loginiderrormessage;
+                document.getElementById("name").focus();
+                return false;
+            }
+            //length of login id
+            if(loginid.length!=8)
+            {
+                document.getElementById("errormessage").innerHTML=loginiderrormessage;
+                document.getElementById("name").focus();
+                return false;
+            }
+            //pattern for login id
+           if(!loginid.match(loginidpattern))
+            {
+                document.getElementById("errormessage").innerHTML=loginiderrormessage;
+                document.getElementById("name").focus();
+                return false;
+            } 
+            //compulsion of password
+            if(password.length==0)
+            {
+                document.getElementById("errormessage").innerHTML=passworderrormessage;
+                document.getElementById("pass").focus();
+                return false;
+            }
+            if(password.length<4||password.length>8)
+            {
+                document.getElementById("errormessage").innerHTML=passworderrormessage;
+                document.getElementById("pass").focus();
+                return false;
+            }
+            if(password.match(passwordpattern))
+            {
+                document.getElementById("errormessage").innerHTML=passworderrormessage;
+                document.getElementById("pass").focus();
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+    &nbsp;&nbsp;<h2><center>Student Registration Form</h2></center>
+    <br>
+    <table width-"100%">
+        <tr>
+            <td width="5%"></td>
+            <td width="20%"></td>
+            <td width="5%"></td>
+            <td width="70%"><span id="errormessage" style="color:red"></span></td>
+        </tr>
+    <p> Name : <input type="text" name="name" id="name" maxlength="50"></p><br>
+    <p> Father's Name : <input type="text" name="fname" id="fname" maxlength="50"></p><br>
+    <p> Mother's Name : <input type="text" name="mname" id="mname" maxlength="50"></p><br>
+    <p> Phone Number : <input type="text" name="num" id="num" maxlength="10"></p><br>
+    <p> Email : <input type="text" name="mail" id="mail" maxlength="50"></p><br>
+    <p> Gender : <input type="radio" name="gen" id="gen">Male
+                 <input type="radio" name="gen" id="gen">Female
+                 <input type="radio" name="gen" id="gen">Other</p><br>
+    <p> Date Of Birth : <input type="text" name="dob" id="dob" size="2" maxlength="2"> -
+                        <input type="text" name="dob" id="dob" size="2" maxlength="2"> -
+                        <input type="text" name="dob" id="dob" size="4" maxlength="4"> (dd-mm-yyyy)</p><br>
+    <p> Address : <input type="text" name="adrs" id="adrs" maxlength="50"></p><br>
+    <p> Blood Group : <label for="bld"></label> 
+                      <select name="bld" id="bld"> 
+                      <option value="A">A+</option> 
+                      <option value="A-">A-</option>  
+                      <option value="B+">B+</option> 
+                      <option value="B-">B-</option> 
+                      </select></p><br>
+    <p> Department : <input type="radio" name="dep" id="dep">CSE
+                     <input type="radio" name="dep" id="dep">EEE
+                     <input type="radio" name="dep" id="dep">BBA</p><br>
+                
+
+    <right><button text-align="right" onclick="validate()">Submit</button></right>
+</table>
+</body>
+</html>

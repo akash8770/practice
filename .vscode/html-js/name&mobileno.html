@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        function validate()
+        {
+            var loginid,password,email; 
+            var loginiderrormessage="Enter your name<br>Enter max 15 character only<br>Enter lowercase alphabets only<br>";   //declaring error variable
+            var passworderrormessage="Enter your Mo.No.<br>enter 10 digit No.<br>"; 
+            var emailerrormessage="Enter your Email<br>please enter correct email";  
+            //declaring pattern
+            var loginidpattern = /^[a-z]/;
+            var passwordpattern = /^[0-9]/;
+            var emailpattern = /^[a-z0-9@]/;
+            //retreiving from field
+            loginid=document.getElementById("name").value;
+            password=document.getElementById("pass").value;
+            email=document.getElementById("mail").value;
+            //compulsion of login
+            if(loginid.length==0)
+            {
+                document.getElementById("errormessage").innerHTML=loginiderrormessage;
+                document.getElementById("name").focus();
+                return false;
+            }
+            //length of login id
+            if(loginid.length!=15)
+            {
+                document.getElementById("errormessage").innerHTML=loginiderrormessage;
+                document.getElementById("name").focus();
+                return false;
+            }
+            //pattern for login id
+           if(!loginid.match(loginidpattern))
+            {
+                document.getElementById("errormessage").innerHTML=loginiderrormessage;
+                document.getElementById("name").focus();
+                return false;
+            } 
+            //compulsion of password
+            if(password.length==0)
+            {
+                document.getElementById("errormessage").innerHTML=passworderrormessage;
+                document.getElementById("pass").focus();
+                return false;
+            }
+            if(password.length<4||password.length>8)
+            {
+                document.getElementById("errormessage").innerHTML=passworderrormessage;
+                document.getElementById("pass").focus();
+                return false;
+            }
+            if(password.match(passwordpattern))
+            {
+                document.getElementById("errormessage").innerHTML=passworderrormessage;
+                document.getElementById("pass").focus();
+                return false;
+            }
+            if(email.length==0)
+            {
+                document.getElementById("errormessage").innerHTML=passworderrormessage;
+                document.getElementById("mail").focus();
+                return false;
+            }
+            
+        }
+    </script>
+</head>
+<body>
+    &nbsp;&nbsp;<h2><center>Login Page</h2></center>
+    <br>
+    <table width-"100%">
+        <tr>
+            <td width="5%"></td>
+            <td width="20%"></td>
+            <td width="5%"></td>
+            <td width="70%"><span id="errormessage" style="color:red"></span></td>
+        </tr>
+    <p>Name <input type="text" name="Name" id="name" maxlength="10"></p><br>
+    <p>Mo.no. <input type="text" name="Pass" id="pass" maxlength="15"></p><br>
+    <p>E-mail <input type="text" name="Email" id="mail" maxlength="25"></p><br>
+    <center><button text-align="center" onclick="validate()">Submit</button></center>
+</table>
+</body>
+</html>
